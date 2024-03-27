@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.about{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom,#222222, #5926b6);
+    color: white;
+    height: 100%;
+}
+
+.team{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.member{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+    border: 0.1rem solid black;
+    margin: 5px 0px;
+    border-radius: 10px;
+}
+.member img{
+    height: 250px;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.information > * {
+    margin:  5px 5px;
+}
