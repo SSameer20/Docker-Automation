@@ -23,7 +23,7 @@
 ## Setup Instructions
 
 1. **Clone the Repository:**
-   - git clone [url]
+   - git clone https://tinyurl.com/hackverse
    
 2. **Install Dependencies:**
    - cd [project-directory]
