@@ -12,8 +12,20 @@ export default function Navigation() {
         <Link to="/">HOME</Link>
       </li>
       <li>
-        <Link to="/product">PRODUCT </Link>
+        <Link to="/container">CONTAINERS </Link>
       </li>
+      <li>
+        <Link to="/automation">AUTOMATION</Link>
+      </li>
+      <li>
+        <Link to="/image">IMAGES</Link>
+      </li>
+      <li>
+        <Link to="/metric">METRICS</Link>
+      </li>
+      {/* <li>
+        <Link to="/container">CONTAINERS </Link>
+      </li> */}
       {/* <li>
         <Link to="/contact">CONTACT</Link>
       </li> */}

@@ -8,6 +8,7 @@
     color: white;
     display: flex;
     flex-direction: column;
+    background-image: linear-gradient(to bottom,#222222, #5926b6)
 }
 
 .task-space{
