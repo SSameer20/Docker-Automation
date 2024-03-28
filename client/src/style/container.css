@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container-data{
+    margin: 50px 50px;
+    
+}
+
+.container-data > * {
+  margin: 20px 0;
+}
+
+#section-title{
+    color: grey;
+}
+.table{
+    color: white;
+}
+.table-title {
+    display: flex;
+    gap: 20px;
+    border-bottom: solid 3px grey;
+    padding-bottom: 10px;
+}
+
+.table-title > *{
+    width: 200px;
+    font-weight: bolder;
+    text-align:start;
+}
+
+.table-data .row {
+    display: flex;
+    gap: 20px;
+    margin: 10px 0;
+    border-bottom: solid 0.1mm grey;
+    padding-bottom: 10px;
+}
+
+.table-data .row > *{
+    width: 200px;
+    text-align:start;
+    
+
+}
+
+@media (max-width: 768px) {
+    .table-th > *,
+    .table-tr > * {
+      width: 150px; /* Reduce width for smaller screens */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .table-th > *,
+    .table-tr > * {
+      width: 100px; /* Make columns full width on very small screens */
+    }
+  
+    .table-tr {
+      flex-direction: column; /* Stack row content vertically on very small screens */
+      align-items: flex-start; /* Align content to the left */
+    }
+  
+    .table-tr > * {
+      margin-bottom: 5px; /* Add some margin between stacked content */
+    }
+  }
