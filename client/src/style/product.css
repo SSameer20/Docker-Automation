@@ -11,5 +11,9 @@
 }
 
 .prod-content{
-    width: 90vw;
+    width: 95vw;
+}
+
+.prod-sidebar{
+    width: 5vw;
 }
