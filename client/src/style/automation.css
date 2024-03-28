@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.automation{
+    /* background-image: linear-gradient(to bottom,#222222, #5926b6); */
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-space{
+    display: flex;
+    justify-content: space-around;
+}
+
+#task{
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+
+

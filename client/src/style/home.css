@@ -75,7 +75,7 @@
 
     button{
         padding: 10px 20px;
-        border: none;
+        /* border: none; */
         border-radius: 10px;
        
     }

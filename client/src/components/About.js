@@ -24,13 +24,7 @@ function About() {
       image: "https://avatars.githubusercontent.com/u/112153702?v=4", 
       github: "https://www.linkedin.com/in/pranaykumar1729/",
     },
-    {
-      id: 3,
-      name: "Aamir Adnan",
-      email: "ameeradnan@gamil.com",
-      image: "https://avatars.githubusercontent.com/u/112880160?v=4", 
-      github: "https://github.com/AamirAdnan",
-    },
+   
   ];
 
   return (

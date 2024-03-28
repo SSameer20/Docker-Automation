@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar{
+    color: aliceblue;
+    width: 50px;
+    background-color: rgb(58, 116, 166);
+    justify-content: center;
+    
+}
+
+
+
+

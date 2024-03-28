@@ -7,11 +7,12 @@ export default function Home() {
     <div>
         <div className="content">
                 <div className="title">
-                <div id="s-title"><p>Hackverse</p></div>  
+                <div id="s-title"><p>Docker</p></div>  
                 </div>
 
                 <div className='subtitle'>
-                    <p>Celebrate the joy of accomplishment with an app designed to track your progress, motivate your efforts, and celebrate your successes, one task at a time.</p>
+                    <p>Docker is a platform designed to help developers build, share, and run container applications. We handle the tedious setup, so you can focus on the code.
+                    </p>
                 </div>
 
                 <button><Link to="/about">Get Started</Link></button>
