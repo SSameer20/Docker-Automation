@@ -6,10 +6,41 @@
 .sidebar{
     color: aliceblue;
     width: 50px;
-    background-color: rgb(58, 116, 166);
+    display: flex;
+    justify-content: space-around;
     justify-content: center;
+    height: 100vh;
     
 }
+.tools{
+    margin: 50px 0px;
+}
+.tools > *{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.tools ul { 
+    list-style: none;
+}
+
+.tools ul li > *{
+    text-decoration: none;
+    color: aliceblue;
+    
+}
+
+.tools ul li :hover{
+    border: none;
+    padding-bottom: 0;
+    transform: scale(1.05);
+}
+
+
+
+
+
 
 
 
