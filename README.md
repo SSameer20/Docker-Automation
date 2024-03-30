@@ -1,8 +1,4 @@
-# HackVerse Hackathon - Team ShadowBroker
-
-## Project Name
-
-Docker Automation
+# Docker Automation using python
 
 ## Team Members
 
