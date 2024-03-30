@@ -2,23 +2,22 @@
 
 ## Project Name
 
-[Project Name]
+Docker Automation
 
 ## Team Members
 
 - Pranay Kumar Nittu
 - Khaja Khadeerullah
 - Sameer Shaik
-- Ameer Adnan
 
 ## Project Description
 
-[Provide a brief description of your project. What problem does it solve? What features does it offer?]
+The project aims to automate Docker container management tasks using Python scripts. Docker is a popular platform for containerization, enabling developers to package applications and their dependencies into isolated containers. Automation of Docker tasks can streamline development workflows, improve efficiency, and ensure consistency across environments.
 
 ## Technologies Used
 
-- MERN Stack (MongoDB, Express.js, React.js, Node.js)
-- [Any additional technologies or libraries used]
+- ReactJS and Python
+
 
 ## Setup Instructions
 
@@ -29,40 +28,27 @@
    - cd [project-directory]
    - npm install
 
-3. **Set Up MongoDB:**
-- Install MongoDB if you haven't already.
-- Start MongoDB service.
+3. **Environment Variables:**
+   - Create a `.env` file in the root directory.
+   - Add the following environment variables:
+   ```
+     PORT=3000
+     ```
 
-4. **Environment Variables:**
-- Create a `.env` file in the root directory.
-- Add the following environment variables:
-  ```
-  PORT=3000
-  MONGODB_URI=mongodb://localhost:27017/[database-name]
-  ```
-
-5. **Start the Server:**
+4. **Start the Server:**
    - npm start
 
-6. **Start the Client:**
+5. **Start the Client:**
    - cd client
    - npm start
 
-7. **Access the Application:**
-Open your web browser and navigate to `http://localhost:3000`.
+6. **Access the Application:**
+   - Open your web browser and navigate to `http://localhost:3000`.
 
 ## Additional Notes
+   - We welcome contributions of all forms, whether it's through code contributions, bug reports, feature suggestions, documentation improvements, or even sharing your experiences and ideas. 
 
-[Include any additional notes or instructions here, such as special configurations, known issues, or future enhancements.]
 
-## License
-
-[Include license information here, if applicable.]
-
-## Acknowledgements
-
-**`Credits`**
--  Pranay Kumar Nittu, Khaja Khadeerullah, Sameer Shaik, Ameer Adnan
 
 
 
