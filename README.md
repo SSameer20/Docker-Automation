@@ -21,7 +21,7 @@ The project aims to automate Docker container management tasks using Python scri
    - git clone https://tinyurl.com/hackverse
    
 2. **Install Dependencies:**
-   - cd [project-directory]
+   - cd client
    - npm install
 
 3. **Environment Variables:**
