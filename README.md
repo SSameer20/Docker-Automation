@@ -1,10 +1,5 @@
 # Docker Automation using python
 
-## Team Members
-
-- Pranay Kumar Nittu
-- Khaja Khadeerullah
-- Sameer Shaik
 
 ## Project Description
 
