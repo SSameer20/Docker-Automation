@@ -13,7 +13,7 @@ The project aims to automate Docker container management tasks using Python scri
 ## Setup Instructions
 
 1. **Clone the Repository:**
-   - git clone https://tinyurl.com/hackverse
+   - git clone https://tinyurl.com/hackverse](https://github.com/SSameer20/Docker-Automation.git
    
 2. **Install Dependencies:**
    - cd client
