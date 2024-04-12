@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
@@ -15,7 +15,7 @@ import Metric from './components/Metric';
 
 function App() {
   return (
-    <BrowserRouter>
+    
       <div className="App">
         <Navigation />  
         
@@ -26,13 +26,10 @@ function App() {
           <Route path="/image" element={<Image />} />
           <Route path="/metric" element={<Metric />} />
           <Route path="/about" element={<About />} />
-          <Route path="/*" element={<Error />} /> {/* Replace Home with your actual home component */}
-          {/* Add routes for update and create if needed, with corresponding components: */}
-          {/* <Route path="/update" element={<UpdateUser />} /> */}
-          {/* <Route path="/create" element={<CreateUser />} /> */}
+          <Route path="/*" element={<Error />} /> 
         </Routes>
       </div>
-    </BrowserRouter>
+    
   );
 }
 

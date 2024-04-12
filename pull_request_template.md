@@ -15,7 +15,7 @@
 ## Checklist
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
-- [x] My code follows the code style of this project.
+- [ ] My code follows the code style of this project.
 - [ ] I have reviewed my code and ensured it's functioning as expected.
 - [ ] I have added appropriate comments to my code, particularly in hard-to-understand areas.
 - [ ] I have updated the documentation accordingly.

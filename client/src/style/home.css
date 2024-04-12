@@ -84,3 +84,20 @@
         text-decoration: none;
         color: black;
     }
+
+    .information .table-head{
+        display: flex;
+        gap: 20px;
+        font-size: large;
+        color: aliceblue;
+    }
+    .information .table-data{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .information .table-data .data{
+        display: flex;
+        gap: 25px;
+    }
+
