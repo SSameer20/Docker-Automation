@@ -22,9 +22,15 @@ function About() {
       name: "Sameer Shaik",
       email: "sameer.kattubadi@gamil.com",
       image: "https://avatars.githubusercontent.com/u/112153702?v=4", 
-      github: "https://www.linkedin.com/in/pranaykumar1729/",
+      github: "https://github.com/SSameer20",
     },
-   
+    {
+      id: 3,
+      name: "Shaik Sohail",
+      email: "s.suhail9849@gmail.com",
+      image: "https://avatars.githubusercontent.com/u/112153702?v=4", 
+      github: "https://github.com/Sohail-9",
+    },
   ];
 
   return (
