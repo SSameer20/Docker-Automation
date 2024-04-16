@@ -1,20 +1,25 @@
-## Pull Request
+## Pull Request 
 
 ## Description
-<!--- Describe the purpose of this Pull Request -->
+ Describe the purpose of this Pull Request
 
 ## Related Issues
-<!--- List any related issues or tickets here -->
+ List any related issues or tickets here 
 
 ## Changes Made
-<!--- Provide a brief description of the changes made in this PR -->
+Provide a brief description of the changes made in this PR
 
-## Screenshots (if applicable)
-<!--- Include any relevant screenshots or GIFs here -->
+## Screenshots
+Include any relevant screenshots or GIFs here
 
 ## Checklist
+<<<<<<< HEAD
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+=======
+ Go over all the following points, and put an `x` in all the boxes that apply.
+ If you're unsure about any of these, don't hesitate to ask. We're here to help!
+>>>>>>> e0be9056f893aabe5aa4ae76f3d20878a6353704
 - [ ] My code follows the code style of this project.
 - [ ] I have reviewed my code and ensured it's functioning as expected.
 - [ ] I have added appropriate comments to my code, particularly in hard-to-understand areas.
