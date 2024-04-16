@@ -3,31 +3,44 @@ The project aims to automate Docker container management tasks using Python scri
 
 ## Technologies Used
 
-- ReactJS and Python
+- ReactJS, ExpressJS, NodeJS, DockerSDK
 
 
 ## Setup Instructions
 
 1. **Clone the Repository:**
-   - git clone https://tinyurl.com/hackverse](https://github.com/SSameer20/Docker-Automation.git
+    ```
+     git clone https://github.com/SSameer20/Docker-Automation.git
+     ```
    
-2. **Install Dependencies:**
-   - cd client
-   - npm install
-
-3. **Environment Variables:**
-   - Create a `.env` file in the root directory.
-   - Add the following environment variables:
-   ```
-     PORT=3000
+2. **Install Client Dependencies:**
+    ```
+     cd client
+     ```
+     ```
+     npm install
+     ```
+3. **Install Server Dependencies:**
+    ```
+     cd server
+     ```
+     ```
+     npm install
      ```
 
 4. **Start the Server:**
-   - npm start
+    
+     ```
+     node index.js
+     ```
 
 5. **Start the Client:**
-   - cd client
-   - npm start
+    ```
+     cd client
+     ```
+     ```
+     npm start
+     ```
 
 6. **Access the Application:**
    - Open your web browser and navigate to `http://localhost:3000`.
