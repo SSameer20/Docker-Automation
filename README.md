@@ -1,8 +1,4 @@
 # Docker Automation
-
-
-## Project Description
-
 The project aims to automate Docker container management tasks using Python scripts. Docker is a popular platform for containerization, enabling developers to package applications and their dependencies into isolated containers. Automation of Docker tasks can streamline development workflows, improve efficiency, and ensure consistency across environments.
 
 ## Technologies Used
