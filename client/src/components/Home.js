@@ -22,20 +22,6 @@ export default function Home() {
 
   }
 
-//  const getDetails = (){
-//   console.log("button is working")
-//     useEffect(() => {
-//       fetch('/getdata')
-//       .then((data) => {
-//         return data.json()
-//       })
-//       .then((res) => {
-//         console.log(res);
-//         setData(res)
-
-//       })
-//     })
-//  }
   return (
     <div>
       <div className="content">
@@ -51,26 +37,6 @@ export default function Home() {
 
         <button onClick={getDetails}>Get Started</button>
 
-        <div className="information">
-          <div className="table-head">
-            <p>Container Id</p>
-            <p>Process name</p>
-          </div>
-
-          <div className="table-data">
-        
-            {
-              data.map((item)=>{
-                return <div className="data">
-                <p>{item["Container Id"]}</p>
-                <p>{item["Process name"]}</p>
-              </div>
-
-              })
-            } 
-
-          </div>
-        </div>
         {/* <Link to="/container">Get Started</Link> */}
       </div>
     </div>

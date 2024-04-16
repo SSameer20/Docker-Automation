@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../style/container.css'
-import usage from '../data/cpu_usage';
-import mem from '../data/cpu_memory.json'
+// import usage from '../data/cpu_usage';
+// import mem from '../data/cpu_memory.json'
 import { FaRunning, FaRegStopCircle } from "react-icons/fa";
 import { MdNotStarted } from "react-icons/md";
 
@@ -10,8 +10,23 @@ export default function Containers() {
     const [memory, setMemory] = useState([]);
 
     useEffect(() => {
-        setCpu(usage);
-        setMemory(mem);
+
+        fetch('http://localhost:3001/api/data/cpu/usage')
+        .then((response)=>{
+            return response.json();
+        })
+        .then((usage)=>{
+            console.log(usage)
+            setCpu(usage);
+        })
+
+        fetch('http://localhost:3001/api/data/cpu/memory')
+        .then((response)=>{
+            return response.json();
+        })
+        .then((mem)=>{
+            setMemory(mem);
+        })  
     })
 
 

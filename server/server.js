@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const cpuData = require('./data/cpu_utilization.json'); // Changed variable name for better readability
+const cpuMemory = require('./data/cpu_memory.json');
+const cpuUsage = require('./data/cpu_usage.json'); // Changed variable name for better readability
+
 
 const app = express();
 const port = 3001;
@@ -9,11 +11,19 @@ const port = 3001;
 app.use(cors());
 
 // Route handler for GET requests to /getdata endpoint
-app.get('/getdata', (req, res) => {
-  req.send("Hello from server"); // Sending JSON data as response
-});
+app.get('/', (req, res)=>{
+  res.send("Hello From Server")
+})
+
+app.get('/api/data/cpu/memory', (req, res)=>{
+  res.send(cpuMemory);
+})
+
+app.get('/api/data/cpu/usage', (req, res)=>{
+  res.send(cpuUsage);
+})
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on  http://localhost:${port}`);
 });
