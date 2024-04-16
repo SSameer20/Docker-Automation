@@ -5,17 +5,23 @@
 
 .about{
     width: 100%;
-    display: flex;
-    justify-content: center;
     background-image: linear-gradient(to bottom,#222222, #5926b6);
     color: white;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .team{
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 100px;
+  
+    /* row-gap: 100px;
+    column-gap: 100px; */
+    margin-top: 100px;
     
 }
 
@@ -24,15 +30,20 @@
     justify-content: center;
     flex-direction: row;
     gap: 50px;
-    border: 0.1rem solid black;
-    margin: 5px 0px;
-    border-radius: 10px;
+    
 }
-.member img{
-    height: 250px;
-    width: 250px;
+
+.member:hover{
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+img{
+    height: 150px;
+    width: 150px;
     border: none;
+    background-image: linear-gradient(to bottom,#222222, #5926b6);
     border-radius: 10px;
+    padding: 50px;
 
 }
 
