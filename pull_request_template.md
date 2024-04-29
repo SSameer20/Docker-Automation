@@ -7,7 +7,7 @@
  List any related issues or tickets here 
 
 ## Changes Made
-Provide a brief description of the changes made in this PR
+Provide a brief description of the changes made in the PR
 
 ## Screenshots
 Include any relevant screenshots or GIFs here
