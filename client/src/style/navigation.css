@@ -31,3 +31,12 @@ li :hover {
     font-size: large;
     transition: .4s;
 }
+
+@media only screen and (max-width: 600px) {
+    nav{
+        display: none;
+        max-width: 600px;
+        height: 20px;
+        
+    }
+}

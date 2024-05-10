@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const cpuMemory = require('./data/cpu_memory.json');
 const cpuUsage = require('./data/cpu_usage.json'); // Changed variable name for better readability
-
+var Docker = require('dockerode');
 
 const app = express();
 const port = 3001;
@@ -17,6 +17,13 @@ app.get('/', (req, res)=>{
 
 app.get('/api/data/cpu/memory', (req, res)=>{
   res.send(cpuMemory);
+})
+
+app.get('/docker/create', (req, res)=>{
+  // res.send(cpuMemory);
+  
+
+  res.send({msg : "Successfully Stoped ALL the containers"})
 })
 
 app.get('/api/data/cpu/usage', (req, res)=>{

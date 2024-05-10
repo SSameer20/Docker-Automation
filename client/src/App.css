@@ -2,3 +2,16 @@ body{
     background-color: #5926b6;
 
 }
+
+/* 
+@media only screen and (max-width: 600px) {
+    body{
+        
+        max-width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+
+    }
+} */
