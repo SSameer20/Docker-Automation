@@ -1,0 +1,23 @@
+nav{
+    width: 100vw;
+    height: 5vh;
+    background-color: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+    max-width: 50vw;
+    gap: 20px;
+    align-items: center;
+
+}
+
+ul li > * {
+    text-decoration: none;
+    color: white;
+}
