@@ -1,0 +1,45 @@
+.container-manager {
+    padding: 10px;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 90vh; */
+    /* max-height: 90vh; */
+    overflow: auto; /* Use 'auto' to only show scrollbars when necessary */
+  }
+  
+  .image-list, .container-actions, .container-list {
+    width: 80%; /* Ensures a consistent width for all sections */
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  button {
+    margin-right: 10px;
+    padding: 5px 10px; /* Adds padding for better button size */
+    border: none;
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
