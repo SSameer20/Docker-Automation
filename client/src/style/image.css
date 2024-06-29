@@ -1,0 +1,23 @@
+.image-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    color: white;
+}
+
+#info{
+    width: 80vw;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+#info td, #info th{
+    border-bottom: 1px solid black;
+}
+
+#info thead tr th{
+    color: black;
+}

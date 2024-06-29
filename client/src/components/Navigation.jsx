@@ -8,8 +8,8 @@ export default function Navigation() {
         <ul>
             <li><Link to="/">HOME</Link></li>
             <li><Link to="/images">IMAGES</Link></li>
+            <li><Link to="/container">CONTAINERS</Link></li>
             <li><Link to="/about">ABOUT</Link></li>
-            {/* <li><Link to="/"></Link></li> */}
         </ul>
     </nav>
   )

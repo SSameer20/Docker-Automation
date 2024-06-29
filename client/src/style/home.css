@@ -1,0 +1,17 @@
+.main-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height  :90vh;
+}
+
+#main-image{
+    height: 30vh;
+}
+#main-title{
+    font-size: xxx-large;
+    color : white;
+    font-weight: bolder;
+}
