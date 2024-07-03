@@ -1,10 +1,8 @@
-// server.js
-
 const express = require('express');
 const cors = require('cors');
 const parser = require('body-parser');
 const { listImages } = require('./image');
-const { createContainer, startContainer, stopContainer,  listContainers } = require('./container'); // Import functions from container.js
+const { createContainer, startContainer, stopContainer,  listContainers } = require('./container'); 
 require('dotenv').config();
 
 const app = express();

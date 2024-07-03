@@ -20,10 +20,10 @@ export default function Images() {
       const fetchedImages = res.data.images || [];
       console.log("Fetched Images:", fetchedImages);
       setImages(fetchedImages);
-      setLoading(false); // Set loading to false once images are fetched
+      setLoading(false); 
     } catch (error) {
       console.error("Error fetching images:", error);
-      setLoading(false); // Set loading to false on error
+      setLoading(false); 
     }
   };
 
