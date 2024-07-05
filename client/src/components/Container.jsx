@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Loader from 'react-js-loader';
 import '../style/container.css';
+import Navigation from './Navigation';
 
 export default function ContainerManager() {
   const [loading, setLoading] = useState(true);
@@ -76,6 +77,8 @@ export default function ContainerManager() {
       <Loader type="spinner-default" bgColor="white" />
     </div>
   ) : (
+    <>
+    <Navigation />
     <div className="container-manager">
       <h2>Docker Container Manager</h2>
 
@@ -95,7 +98,7 @@ export default function ContainerManager() {
                 <td>{image.Id}</td>
                 <td>{image.RepoTags.join(', ')}</td>
                 <td>{new Date(image.Created * 1000).toLocaleString()}</td>
-              </tr>
+                </tr>
             ))}
           </tbody>
         </table>
@@ -108,7 +111,7 @@ export default function ContainerManager() {
           value={newImage}
           onChange={(e) => setNewImage(e.target.value)}
           placeholder="Enter image name"
-        />
+          />
         <button onClick={createContainer}>Create Container</button>
       </div>
 
@@ -139,5 +142,6 @@ export default function ContainerManager() {
         </table>
       </div>
     </div>
+                </>
   );
 }

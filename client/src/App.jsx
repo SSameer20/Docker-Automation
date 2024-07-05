@@ -12,10 +12,10 @@ import Authentication from './components/Authentication';
 export default function App() {
   return (
     <div>
-      <Navigation />
+      
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/authentication" element={<Authentication />} />
+        <Route path="/" element={<Authentication />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/images" element={<Images />} />
         <Route path="/container" element={<Container />} />
         <Route path="/about" element={<About />} />
