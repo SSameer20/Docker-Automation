@@ -8,6 +8,7 @@ export default function Authentication() {
         e.preventDefault();
         console.log(email, password);
     }
+    
   return (
     <>
     <div className="auth">

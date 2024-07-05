@@ -1,44 +1,50 @@
-// container.js
-
 const Docker = require('dockerode');
 const docker = new Docker();
 
-const createContainer = (image, callback) => {
-  docker.createContainer({
-    Image: image,
-    Tty: true,
-  }, (err, container) => {
-    if (err) return callback(err);
-    callback(null, container);
-  });
+const createContainer = async (image) => {
+  try {
+    const container = await docker.createContainer({
+      Image: image,
+      Tty: true,
+    });
+    return container;
+  } catch (err) {
+    throw new Error(`Failed to create container: ${err.message}`);
+  }
 };
 
-const startContainer = (containerId, callback) => {
-  const container = docker.getContainer(containerId);
-  container.start((err, data) => {
-    if (err) return callback(err);
-    callback(null, data);
-  });
+const startContainer = async (containerId) => {
+  try {
+    const container = docker.getContainer(containerId);
+    const data = await container.start();
+    return data;
+  } catch (err) {
+    throw new Error(`Failed to start container: ${err.message}`);
+  }
 };
 
-const stopContainer = (containerId, callback) => {
-  const container = docker.getContainer(containerId);
-  container.stop((err, data) => {
-    if (err) return callback(err);
-    callback(null, data);
-  });
+const stopContainer = async (containerId) => {
+  try {
+    const container = docker.getContainer(containerId);
+    const data = await container.stop();
+    return data;
+  } catch (err) {
+    throw new Error(`Failed to stop container: ${err.message}`);
+  }
 };
 
-const listContainers = (callback) => {
-  docker.listContainers({ all: true }, (err, containers) => {
-    if (err) return callback(err);
-    callback(null, containers);
-  });
+const listContainers = async () => {
+  try {
+    const containers = await docker.listContainers({ all: true });
+    return containers;
+  } catch (err) {
+    throw new Error(`Failed to list containers: ${err.message}`);
+  }
 };
 
 module.exports = {
   createContainer,
   startContainer,
   stopContainer,
-  listContainers
+  listContainers,
 };
