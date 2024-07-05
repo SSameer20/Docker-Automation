@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "../style/home.css"
 import dockerImage from "../media/docker.png"
+import Navigation from './Navigation';
 
 export default function Home() {
 
@@ -22,6 +23,8 @@ export default function Home() {
   };
 
   return (
+    <>
+    <Navigation />
     <section>
       <div className="main-head">
         <img src={dockerImage} alt="" srcset="" id="main-image"/>
@@ -30,5 +33,6 @@ export default function Home() {
       </div>
 
     </section>
+    </>
   )
 }

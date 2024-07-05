@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "../style/auth.css"
 
 export default function Authentication() {
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const login = (e) =>{
@@ -9,14 +10,17 @@ export default function Authentication() {
         console.log(email, password);
     }
     
+
   return (
-    <>
-    <div className="auth">
-        <p >Login in to Docker</p>
-        <input type="email" placeholder='enter email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
-        <input type="password" placeholder='enter password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
-        <button onClick={login}>Login</button>
+    <div className='auth'>
+      <div className="auth-form">
+        <input type="email" name="user-email" id="auth-email"  placeholder='email'/>
+        <input type="password" name="user-password" id="auth-password"  placeholder='password'/>
+        <button id='login-btn'>
+          Login
+        </button>
+      </div>
     </div>
-    </>
+
   )
 }

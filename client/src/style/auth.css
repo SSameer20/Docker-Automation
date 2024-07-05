@@ -1,6 +1,37 @@
 .auth{
+n-items: center;
+
+    max-width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
+}
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+#auth-email, #auth-password{
+    background-color: transparent;
+    color: aliceblue;
+    border: 0.1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+#auth-email:focus, #auth-password:focus {
+    border-color: white;
+    border-width: 2px;  
+    outline: none;     
+}
+
+#login-btn{
+    width: 100%;
+    border-radius: 5px;
+
 }
