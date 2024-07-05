@@ -2,6 +2,15 @@ import React, { useState } from 'react'
 import "../style/auth.css"
 
 export default function Authentication() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const login = (e) =>{
+        e.preventDefault();
+        console.log(email, password);
+    }
+    
+
   return (
     <div className='auth'>
       <div className="auth-form">
@@ -12,5 +21,6 @@ export default function Authentication() {
         </button>
       </div>
     </div>
+
   )
 }
