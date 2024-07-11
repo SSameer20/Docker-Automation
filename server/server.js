@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const parser = require('body-parser');
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 const { listImages } = require('./image');
 const { createContainer, startContainer, stopContainer,  listContainers } = require('./container'); 
 require('dotenv').config();
@@ -10,10 +10,10 @@ require('dotenv').config();
 const app = express();
 
 /// DB
-const URI = process.env.MONGO_URI;
-mongoose.connect(URI)
-.then(() => console.log("Connected Successfully"))
-.catch((err) => console.log("Error While Connecting " + err))
+// const URI = process.env.MONGO_URI;
+// mongoose.connect(URI)
+// .then(() => console.log("Connected Successfully"))
+// .catch((err) => console.log("Error While Connecting " + err))
 
 
 
@@ -24,10 +24,10 @@ app.use(parser.json());
 
 const PORT = process.env.PORT || 5000;
 
-app.get("/", (req, res) => {
-    const {email, password} = req.body;
+// app.get("/", (req, res) => {
+//     const {email, password} = req.body;
 
-  })
+//   })
 
 app.get("/", (req, res) => {
   res.send("Server is running");
@@ -42,8 +42,9 @@ app.get("/images", (req, res) => {
       return res.status(500).send({
         msg: "Error listing images",
       });
+     
     }
-
+    // console.log(images);
     res.status(200).send({
       images: images,
     });

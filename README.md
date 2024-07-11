@@ -1,4 +1,6 @@
-# Docker Automation
+![Docker](./assets/banner.gif)
+
+## Docker Automation
 The project aims to automate Docker container management tasks using Interface. Docker is a popular platform for containerization, enabling developers to package applications and their dependencies into isolated containers. Automation of Docker tasks can streamline development workflows, improve efficiency, and ensure consistency across environments.
 
 

@@ -1,5 +1,7 @@
 const Docker = require('dockerode');
-const docker = new Docker();
+var docker = new Docker({ socketPath: '//./pipe/docker_engine' });
+
+
 
 const listImages = (callback) => {
   docker.listImages((err, images) => {
