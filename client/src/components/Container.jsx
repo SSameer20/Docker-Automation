@@ -1,5 +1,3 @@
-// ContainerManager.jsx
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Loader from 'react-js-loader';
@@ -8,26 +6,14 @@ import Navigation from './Navigation';
 
 export default function ContainerManager() {
   const [loading, setLoading] = useState(true);
-  const [images, setImages] = useState([]);
   const [newImage, setNewImage] = useState('');
+  const [newName, setNewName] = useState('');
   const [containers, setContainers] = useState([]);
-
-  const fetchImages = async () => {
-    try {
-      const res = await axios.get('http://localhost:5000/images', {
-        params: { flag: true },
-      });
-      const fetchedImages = res.data.images || [];
-      setImages(fetchedImages);
-    } catch (error) {
-      console.error('Error fetching images:', error);
-    }
-  };
 
   const fetchContainers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/containers');
-      const fetchedContainers = res.data.containers || [];
+      const res = await axios.get('http://localhost:5000/list');
+      const fetchedContainers = res.data || [];
       setContainers(fetchedContainers);
     } catch (error) {
       console.error('Error fetching containers:', error);
@@ -38,9 +24,10 @@ export default function ContainerManager() {
     try {
       const res = await axios.post('http://localhost:5000/create', {
         image: newImage,
+        name: newName,
       });
       alert(`Container created: ${res.data.containerId}`);
-      fetchContainers(); // Refresh container list
+      fetchContainers();
     } catch (error) {
       console.error('Error creating container:', error);
     }
@@ -48,9 +35,9 @@ export default function ContainerManager() {
 
   const startContainer = async (containerId) => {
     try {
-      await axios.post('http://localhost:5000/start', { containerId });
+      await axios.post(`http://localhost:5000/start/${containerId}`);
       alert('Container started');
-      fetchContainers(); // Refresh container list
+      fetchContainers();
     } catch (error) {
       console.error('Error starting container:', error);
     }
@@ -58,16 +45,25 @@ export default function ContainerManager() {
 
   const stopContainer = async (containerId) => {
     try {
-      await axios.post('http://localhost:5000/stop', { containerId });
+      await axios.post(`http://localhost:5000/stop/${containerId}`);
       alert('Container stopped');
-      fetchContainers(); // Refresh container list
+      fetchContainers();
     } catch (error) {
       console.error('Error stopping container:', error);
     }
   };
 
+  const removeContainer = async (containerId) => {
+    try {
+      await axios.delete(`http://localhost:5000/remove/${containerId}`);
+      alert('Container removed');
+      fetchContainers();
+    } catch (error) {
+      console.error('Error removing container:', error);
+    }
+  };
+
   useEffect(() => {
-    fetchImages();
     fetchContainers();
     setLoading(false);
   }, []);
@@ -78,70 +74,57 @@ export default function ContainerManager() {
     </div>
   ) : (
     <>
-    <Navigation />
-    <div className="container-manager">
-      <h2>Docker Container Manager</h2>
+      <Navigation />
+      <div className="container-manager">
+        <h2>Docker Container Manager</h2>
 
-      <div className="image-list">
-        <h3>Available Docker Images</h3>
-        <table id="info">
-          <thead>
-            <tr>
-              <th>Image ID</th>
-              <th>Repo Tags</th>
-              <th>Created</th>
-            </tr>
-          </thead>
-          <tbody>
-            {images.map((image, index) => (
-              <tr key={index}>
-                <td>{image.Id}</td>
-                <td>{image.RepoTags.join(', ')}</td>
-                <td>{new Date(image.Created * 1000).toLocaleString()}</td>
-                </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div className="container-actions">
-        <h3>Create Container</h3>
-        <input
-          type="text"
-          value={newImage}
-          onChange={(e) => setNewImage(e.target.value)}
-          placeholder="Enter image name"
+        <div className="container-actions">
+          <h3>Create Container</h3>
+          <input
+            type="text"
+            value={newImage}
+            onChange={(e) => setNewImage(e.target.value)}
+            placeholder="Enter image name"
           />
-        <button onClick={createContainer}>Create Container</button>
-      </div>
+          <input
+            type="text"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+            placeholder="Enter container name (optional)"
+          />
+          <button onClick={createContainer}>Create Container</button>
+        </div>
 
-      <div className="container-list">
-        <h3>Manage Containers</h3>
-        <table id="info">
-          <thead>
-            <tr>
-              <th>Container ID</th>
-              <th>Image</th>
-              <th>State</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {containers.map((container, index) => (
-              <tr key={index}>
-                <td>{container.Id}</td>
-                <td>{container.Image}</td>
-                <td>{container.State}</td>
-                <td>
-                  <button onClick={() => startContainer(container.Id)}>Start</button>
-                  <button onClick={() => stopContainer(container.Id)}>Stop</button>
-                </td>
+        <div className="container-list">
+          <h3>Manage Containers</h3>
+          <table id="info">
+            <thead>
+              <tr>
+                <th>Container ID</th>
+                <th>Image</th>
+                <th>State</th>
+                <th>Status</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {containers.map((container, index) => (
+                <tr key={index}>
+                  <td>{container.Id}</td>
+                  <td>{container.Image}</td>
+                  <td>{container.State}</td>
+                  <td>{container.Status}</td>
+                  <td>
+                    <button onClick={() => startContainer(container.Id)}>Start</button>
+                    <button onClick={() => stopContainer(container.Id)}>Stop</button>
+                    <button onClick={() => removeContainer(container.Id)}>Remove</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-                </>
+    </>
   );
 }

@@ -11,12 +11,18 @@
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.17",
+    "@types/dockerode": "^3.3.39",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.1",
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "cors": "^2.8.5",
-    "express": "^4.21.1"
+    "dockerode": "^4.0.6",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.1",
+    "server": "file:",
+    "ts-node": "^10.9.2"
   }
 }
