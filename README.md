@@ -1,62 +1,105 @@
-![Docker](./assets/banner.gif)
+# Docker Automation
 
-## Docker Automation
-The project aims to automate Docker container management tasks using Interface. Docker is a popular platform for containerization, enabling developers to package applications and their dependencies into isolated containers. Automation of Docker tasks can streamline development workflows, improve efficiency, and ensure consistency across environments.
+![Docker Automation Banner](./assets/banner.gif)
 
+**Docker Automation** is an open-source project that provides a modern web interface for managing Docker containers and images. It aims to simplify and automate common Docker tasks, making container management accessible and efficient for developers and teams.
 
+---
+
+## Features
+
+- **Intuitive Dashboard:** Manage Docker containers and images visually.
+- **Container Lifecycle:** Create, start, stop, and monitor containers.
+- **Image Management:** Pull, view, and remove Docker images.
+- **Cross-Platform:** Works anywhere Docker and Node.js are available.
+- **RESTful API:** Backend powered by Express.js and Dockerode.
+
+---
 
 ## Technologies Used
 
-- ReactJS, ExpressJS, NodeJS, DockerSDK
+- **Frontend:** ReactJS
+- **Backend:** ExpressJS, NodeJS
+- **Docker Integration:** Dockerode SDK
 
+---
 
-## Setup Instructions
+## Getting Started
 
-1. **Clone the Repository:**
-    ```
-     git clone https://github.com/SSameer20/Docker-Automation.git
-     ```
-   
-2. **Install Client Dependencies:**
-    ```
-     cd client
-     ```
-     ```
-     npm install
-     ```
-3. **Install Server Dependencies:**
-    ```
-     cd server
-     ```
-     ```
-     npm install
-     ```
+### 1. Clone the Repository
 
-4. **Start the Server:**
-    
-     ```
-     node server.js
-     ```
+```sh
+git clone https://github.com/SSameer20/Docker-Automation.git
+cd Docker-Automation
+```
 
-5. **Start the Client:**
-    ```
-     cd client
-     ```
-     ```
-     npm start
-     ```
+### 2. Install Client Dependencies
 
-6. **Access the Application:**
-   - Open your web browser and navigate to `http://localhost:3000`.
+```sh
+cd client
+npm install
+```
 
-## Workflow design
-![Alt Text](https://raw.githubusercontent.com/SSameer20/Docker-Automation/main/flows/data_workflow.png)
+### 3. Install Server Dependencies
 
+```sh
+cd ../server
+npm install
+```
 
-## Additional Notes
-- We welcome contributions of all forms, whether it's through code contributions, bug reports, feature suggestions, documentation improvements, or even sharing your experiences and ideas. 
+### 4. Start the Server
 
+```sh
+node server.js
+```
 
+### 5. Start the Client
 
+```sh
+cd ../client
+npm start
+```
 
+### 6. Access the Application
 
+Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Architecture
+
+The project uses a client-server architecture:
+
+- **Client:** React app for user interaction.
+- **Server:** Express API that communicates with the Docker daemon via Dockerode.
+
+![Workflow Diagram](https://raw.githubusercontent.com/SSameer20/Docker-Automation/main/flows/data_workflow.png)
+
+---
+
+## Contributing
+
+We welcome contributions of all kinds! You can help by:
+
+- Reporting bugs and issues
+- Suggesting new features or improvements
+- Submitting pull requests for code, documentation, or tests
+- Sharing your experiences and feedback
+
+Please see our [contribution guidelines](.github/issue_template.md) and [pull request template](.github/pull_request_template.md) before submitting.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Contact
+
+For questions or support, please open an issue on [GitHub](https://github.com/SSameer20/Docker-Automation/issues).
+
+---
+
+Thank you for supporting Docker Automation!
