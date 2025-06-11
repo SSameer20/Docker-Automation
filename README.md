@@ -43,20 +43,20 @@ npm install
 ### 3. Install Server Dependencies
 
 ```sh
-cd ../server
+cd server
 npm install
 ```
 
 ### 4. Start the Server
 
 ```sh
-node server.js
+npm start
 ```
 
 ### 5. Start the Client
 
 ```sh
-cd ../client
+cd client
 npm start
 ```
 
@@ -72,8 +72,6 @@ The project uses a client-server architecture:
 
 - **Client:** React app for user interaction.
 - **Server:** Express API that communicates with the Docker daemon via Dockerode.
-
-![Workflow Diagram](https://raw.githubusercontent.com/SSameer20/Docker-Automation/main/flows/data_workflow.png)
 
 ---
 
