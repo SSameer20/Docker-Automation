@@ -1,83 +1,32 @@
-import express, { Request, Response, RequestHandler } from "express";
+import express from "express";
 import cors from "cors";
-import Docker from "dockerode";
-import bodyParser from "body-parser";
+import dotenv from "dotenv";
+import { corsOptions } from "./utils/cors.utils";
+import router from "./routes/route";
+dotenv.config();
 
 const app = express();
-const docker = new Docker({ socketPath: "//./pipe/docker_engine" });
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/api/v1", router);
 
-app.get("/images", (async (req: Request, res: Response) => {
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  const environment = process.env.NODE_ENV || "development";
+
   try {
-    const images = await docker.listImages({ all: true });
-    res.json({ images });
-  } catch (err) {
-    res.status(500).json({ error: "Failed to list images" });
-  }
-}) as RequestHandler);
-
-app.get("/containers", (async (req: Request, res: Response) => {
-  try {
-    const containers = await docker.listContainers({ all: true });
-    res.json({ containers });
-  } catch (err) {
-    res.status(500).json({ error: "Failed to list containers" });
-  }
-}) as RequestHandler);
-
-app.post("/create", (async (req: Request, res: Response) => {
-  const { image } = req.body;
-  try {
-    const stream = await docker.pull(image);
-    await new Promise<void>((resolve, reject) => {
-      docker.modem.followProgress(stream, (err) => {
-        if (err) return reject(err);
-        resolve();
-      });
-    });
-
-    const container = await docker.createContainer({
-      Image: image,
-      Cmd: ["sleep", "3600"],
-      Tty: true,
-    });
-    await container.start();
-    res.json({ containerId: container.id });
-  } catch (err: any) {
-    if (err.statusCode === 404) {
-      return res.status(404).json({ error: "Image not found." });
+    if (environment === "development") {
+      console.log(
+        `Development Server is running on port http://localhost:${PORT}`
+      );
+    } else if (environment === "test") {
+      console.log(`Test Server is running on port http://localhost:${PORT}`);
+    } else {
+      console.log(`Server is running`);
     }
-    res.status(500).json({ error: "Failed to create container" });
+  } catch (error) {
+    console.error("Error starting the server:", error);
   }
-}) as RequestHandler);
-
-app.post("/start", (async (req: Request, res: Response) => {
-  const { containerId } = req.body;
-  try {
-    const container = docker.getContainer(containerId);
-    await container.start();
-    res.json({ message: "Container started" });
-  } catch (err: any) {
-    if (err.statusCode === 304) {
-      return res.json({ message: "Container already running" });
-    }
-    res.status(500).json({ error: "Failed to start container" });
-  }
-}) as RequestHandler);
-
-app.post("/stop", (async (req: Request, res: Response) => {
-  const { containerId } = req.body;
-  try {
-    const container = docker.getContainer(containerId);
-    await container.stop();
-    res.json({ message: "Container stopped" });
-  } catch (err) {
-    res.status(500).json({ error: "Failed to stop container" });
-  }
-}) as RequestHandler);
-
-app.listen(5000, () => {
-  console.log("🚀 Docker API server running at http://localhost:5000");
 });
