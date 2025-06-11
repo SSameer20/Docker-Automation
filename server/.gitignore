@@ -6,8 +6,8 @@ node_modules/
 .pnp.js
 
 # build output
-dist/
-build/
+dist/*
+build/*
 
 # testing
 /coverage
