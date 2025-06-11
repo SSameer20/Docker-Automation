@@ -1,1 +1,1 @@
-{"root":["./src/dockerutils.ts","./src/index.ts"],"version":"5.7.2"}
+{"root":["./src/index.ts","./src/config/docker.config.ts","./src/controller/container.controller.ts","./src/controller/image.controller.ts","./src/middleware/user.middleware.ts","./src/routes/container.routes.ts","./src/routes/image.routes.ts","./src/routes/route.ts","./src/utils/cors.utils.ts","./src/utils/status.util.ts"],"version":"5.7.2"}
